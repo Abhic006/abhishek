@@ -1,0 +1,62 @@
+
+/*  */
+body{
+		background-image:url("./image/tofino-school-of-fitness-background1.jpg");
+			
+}
+.container-1{
+    width: 340px;
+    height: 377px;
+    border-radius: 70px;
+    background-color: transparent;
+    box-shadow: 5px 5px 17px rgb(107 105 103);
+    /* float: right; */
+    margin-top: 7rem;
+    /* margin-right: 6rem; */
+    margin-left: 30rem;
+	
+    
+}
+
+	
+.container-1 h1{
+    text-align: center;
+    padding: 10px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+.box{
+    margin-left: 35px;
+   
+}
+.box input{
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-bottom: 1px solid rgb(68, 59, 59);
+    /* padding-left: 40px; */
+    outline: none;
+   
+    background-color: transparent;
+}
+.box input:active
+{
+    outline: none;
+    background-color: transparent;
+}
+button{
+    padding: 11px;
+    padding-left: 14px 20px;
+    
+    margin-top: 80px;
+    margin-left: 55px;
+    border-radius: 7px;
+    background-color:rgb(231, 70, 12);
+    color: white;
+    cursor: pointer;width: 60%;
+}
+button:hover{
+    /* opacity: 0.8; */
+    background-color: rgb(230, 233, 236);
+    color: black;
+}

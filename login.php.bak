@@ -1,0 +1,207 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: welcome.php");
+    exit;
+}
+ 
+// Include config file
+require_once "config.php";
+ 
+// Define variables and initialize with empty values
+$username = $password = "";
+$username_err = $password_err = $login_err = "";
+ 
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+ 
+    // Check if username is empty
+    if(empty(trim($_POST["username"]))){
+        $username_err = "Please enter username.";
+    } else{
+        $username = trim($_POST["username"]);
+    }
+    
+    // Check if password is empty
+    if(empty(trim($_POST["password"]))){
+        $password_err = "Please enter your password.";
+    } else{
+        $password = trim($_POST["password"]);
+    }
+    
+    // Validate credentials
+    if(empty($username_err) && empty($password_err)){
+        // Prepare a select statement
+        $sql = "SELECT id, username, password FROM admin WHERE username = ?";
+        
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+            
+            // Set parameters
+            $param_username = $username;
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                // Store result
+                mysqli_stmt_store_result($stmt);
+                
+                // Check if username exists, if yes then verify password
+                if(mysqli_stmt_num_rows($stmt) == 1){                    
+                    // Bind result variables
+                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                    if(mysqli_stmt_fetch($stmt)){
+                        if(password_verify($password, $hashed_password)){
+                            // Password is correct, so start a new session
+                            session_start();
+                            
+                            // Store data in session variables
+                            $_SESSION["loggedin"] = true;
+                            $_SESSION["id"] = $id;
+                            $_SESSION["username"] = $username;                            
+                            
+                            // Redirect user to welcome page
+                            header("location: index-2.php");
+                        } else{
+                            // Password is not valid, display a generic error message
+                            $login_err = "Invalid username or password.";
+                        }
+                    }
+                } else{
+                    // Username doesn't exist, display a generic error message
+                    $login_err = "Invalid username or password.";
+                }
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+    }
+    
+    // Close connection
+    mysqli_close($link);
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/a011f2d08e.js" crossorigin="anonymous"></script>
+    
+    <title>login form</title>
+	<style>
+		
+/*  */
+body{
+		background-image:url("./image/tofino-school-of-fitness-background1.jpg");
+		
+			
+}
+body p{
+	color:white;
+	
+}
+body a{
+	text-decoration:none;
+}
+body a:hover{
+	
+	color:red;
+}
+
+.container-1{
+    width: 340px;
+    height: 377px;
+    border-radius: 70px;
+    background-color: transparent;
+    box-shadow: 5px 5px 17px rgb(107 105 103);
+    /* float: right; */
+    margin-top: 7rem;
+    /* margin-right: 6rem; */
+    margin-left: 30rem;
+	
+    
+}
+
+	
+.container-1 h1{
+    text-align: center;
+	color:white;
+    padding: 10px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+.box{
+    margin-left: 35px;
+   
+}
+.box input{
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-bottom: 1px solid rgb(68, 59, 59);
+    /* padding-left: 40px; */
+    outline: none;
+   
+    background-color: transparent;
+}
+.box input:active
+{
+    outline: none;
+    background-color: transparent;
+}
+button{
+    padding: 11px;
+    padding-left: 14px 20px;
+    
+    margin-top: 80px;
+    margin-left: 55px;
+    border-radius: 7px;
+    background-color:rgb(221 62 62 / 99%);
+    color: white;
+    cursor: pointer;width: 60%;
+}
+button:hover{
+    /* opacity: 0.8; */
+        background-color: rgb(222 45 45 / 99%);
+   
+}
+i{
+	color:white;
+}
+
+	</style>
+</head>
+<body>
+
+  <div class="container-1">
+    <h1>Admin Login </h1>
+	 <?php 
+        if(!empty($login_err)){
+            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        }        
+        ?>
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <div class="box">
+        <!-- <i class="fa-regular fa-user-secret"></i> -->
+        <i class="fa-solid fa-user"></i>
+        <input type="text" name="username" id="username" placeholder="username " class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+		 <span class="invalid-feedback"><?php echo $username_err; ?></span>
+	 </div>
+    <div class="box">
+        <!-- <i class="fa-duotone fa-key"></i> -->
+        <i class="fa fa-lock"></i>
+        <input type="password" name="password" id="password" placeholder="Password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+		 <span class="invalid-feedback"><?php echo $password_err; ?></span>
+   </div>
+    <button type="submit">Login</button>
+	 <center><p>Don't have an account? <a href="sign_up.php">Sign up now</a></p></center>
+	</form>
+  </div>
+ 
+</body>
+</html>

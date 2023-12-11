@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/a011f2d08e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="2ndlogin.css">
+    <title>login form</title>
+</head>
+<body>
+
+  <div class="container-1">
+    <h1>Login form</h1>
+	 <?php 
+        if(!empty($login_err)){
+            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        }        
+        ?>
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <div class="box">
+        <!-- <i class="fa-regular fa-user-secret"></i> -->
+        <i class="fa-solid fa-user"></i>
+        <input type="text" name="username" id="username" placeholder="username ">
+    </div>
+    <div class="box">
+        <!-- <i class="fa-duotone fa-key"></i> -->
+        <i class="fa fa-lock"></i>
+        <input type="password" name="password" id="password" placeholder="Password">
+    </div>
+    <button type="submit">Login</button>
+	</form>
+  </div>  
+</body>
+</html>

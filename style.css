@@ -1,0 +1,579 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+    background-image: url("./image/wp2639544-gym-wallpaper-hd.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 770px;
+}
+
+.icone img{
+    display: none;
+}
+
+
+
+.start{
+    background: #0000002b;
+    width: 100%;
+    height:80px;
+   
+    margin-top: -7px;
+}
+.container a{
+    text-decoration: none;
+    color: wheat;
+}
+
+.home{
+    width: 6%;
+    height: 42px;
+    
+    text-align: center;
+    margin-left: 604px;
+    margin-top: -80px;
+    padding-top: 11px;
+}
+.home p{
+   margin-top: 0px;
+}
+.home:hover{
+    background: #2c24244a;
+    border-radius: 9px;
+}
+.about-us{
+    width: 6%;
+    height: 42px;
+    
+    text-align: center;
+    margin-left: 718px;
+    margin-top: -42px;
+    padding-top: 11px;
+}
+.about-us:hover{
+    background: #2c24244a;
+    border-radius: 9px;
+}
+.gallery-home{
+    width: 6%;
+    height: 42px;
+   
+    text-align: center;
+    margin-left: 837px;
+    margin-top: -42px;
+    padding-top: 11px;
+}
+.gallery-home:hover{
+    background: #2c24244a;
+    border-radius: 9px;
+}
+.contsct-1{
+    width: 6%;
+    height: 42px;
+    
+    text-align: center;
+    margin-left: 954px;
+    margin-top: -43px;
+    padding-top: 11px;
+}
+.contsct-1:hover{
+    background: #2c24244a;
+    border-radius: 9px;
+}
+.login-1{
+    width: 6%;
+    height: 42px;
+   
+    text-align: center;
+    margin-left: 1071px;
+    margin-top: -42px;
+    padding-top: 11px;
+}
+.login-1:hover{
+    background: #2c24244a;
+    border-radius: 9px;
+}
+.regis{
+    width: 9%;
+    height: 42px;
+    text-align: center;
+    margin-left: 1184px;
+    margin-top: -42px;
+    padding-top: 11px;
+}
+.regis:hover{
+    background: #2c24244a;
+    border-radius: 9px;
+}
+.container img{
+    width: 9%;
+    margin-left: 53px;
+    margin-top: -20px;
+}
+
+
+
+
+.navbar{
+    
+    display: flex;
+    height: 100px;
+    width: 100%;
+    
+}
+.center{
+    
+    width: 100%;
+    height: 50px;
+    margin-top: 43px;
+}
+.center b{
+    font-size: 35px;
+  
+}
+.navbar-1{
+   
+    display: flex;
+    height: 762px;
+    width: 100%; 
+    background: linear-gradient(to right, #9500adb8,#00b1ffb3,#f08e2cba,#000000a8);
+    margin-top: 29px;
+}
+.container-2{
+    height: 630px;
+    width: 20%;
+    box-shadow: 0px 0px 4px rebeccapurple;
+    margin-left: 133px;
+    background-image: url("./image/pexels-mikhail-nilov-6932883.jpg");
+    background-size: 100% 630px;
+    background-repeat: no-repeat;
+    margin-top: 69px;
+    border-radius: 33px;
+    transition: 2s ;
+}
+.container-2 .shadow{
+    
+    background-color: rgb(255 83 238 / 43%);
+    
+} 
+.container-2:hover{
+    transform: scale(1.2);
+    z-index: 1;
+}
+.container-2 .shadow p{
+    color: white;
+}
+.container-2 .shadow h1{
+    color: #ffe008;
+}
+.container-2 .shadow ul li{
+    border: 2px solid #a129a7;
+}
+.container-2 .shadow ul li:hover{
+    background: linear-gradient(to right, #6a526db0, #ff00eaeb);
+}
+.container-3{
+    background-image: url("./image/wp2483045-gym-wallpaper-hd.jpg");
+    height: 630px;
+    width: 20%;
+    box-shadow: 0px 0px 4px rebeccapurple;
+    margin-left: 9px;
+    margin-top: 69px;
+    transition: 2s ;
+    background-size: 100% 630px;
+    background-repeat: no-repeat;
+    border-radius: 33px;
+}
+.container-3:hover{
+    transform: scale(1.2);
+    z-index: 1;
+}
+.container-3 .shadow h1{
+    color: #ffe008;
+}
+.shadow{
+    width: 100%;
+    height: 630px;
+    background-color: rgb(43 179 255 / 58%);
+    padding: 19px;
+    margin: 0px;
+    padding-top: 300px;
+    color: wheat;
+    border-radius: 33px;
+   
+}
+.shadow p{
+    padding-top: 12px;
+    font-size: 21px;
+    padding-left: 13px;
+    color: white;
+}
+.shadow ul{
+    list-style: none;
+}
+.shadow ul li{
+    width: 50%;
+    height: 53px;
+    border-radius: 20px;
+    border: 2px solid #2f63af;
+    margin-left: 66px;
+    margin-top: 65px;
+    padding-left: 10px;
+    font-size: 14px;
+    padding-top: 11px;
+    color: #ffec00;
+}
+.shadow ul li:hover{
+    background: linear-gradient(to left, #2b3e4ebd, #0088ffb0);
+    color: white;
+    
+}
+
+
+.container-4{
+    height: 630px;
+    width: 20%;
+    box-shadow: 0px 0px 4px rebeccapurple;
+    background-image: url("./image/fitness body photo fitness hd image fitness widescreen image fitness.jpg");
+    margin-left: 9px;
+    background-size: 120% 630px;
+    background-repeat: no-repeat;
+    margin-top: 69px;
+    border-radius: 33px;
+    transition: 2s ;
+}
+.container-4:hover{
+    transform: scale(1.2);
+    z-index: 1;
+}
+.container-4 .shadow h1{
+    color: #ffe008;
+}
+.container-4 .shadow{
+    background-color: rgb(236 103 0 / 51%);
+}
+.container-4 .shadow p{
+    color: white;
+}
+.container-4 .shadow ul li:hover{
+    background: linear-gradient(to right, #445a4bb0, #ff4700eb);
+}
+.container-4 .shadow ul li{
+    border: 2px solid #a14b1a;
+}
+.container-5{
+    height: 630px;
+    width: 20%;
+    box-shadow: 0px 0px 4px rebeccapurple;
+    background-image: url("./image/index-06.jpg");
+    margin-left: 9px;
+    background-size: 120% 630px;
+    background-repeat: no-repeat;
+    margin-top: 69px;
+    border-radius: 33px;
+    transition: 2s ;
+}
+.container-5:hover{
+    transform: scale(1.2);
+    z-index: 1;
+}
+.container-5 .shadow h1{
+    color: #ffe008;
+}
+.container-5 .shadow{
+    background:  rgb(56 47 39 / 24%);;
+}
+.container-5 .shadow p{
+    color: white;
+}
+.container-5 .shadow ul li:hover{
+    background: linear-gradient(to left, #323c4557, #cb8074b0);
+}
+.container-5 .shadow ul li{
+    border: 2px solid #3d3632;
+}
+
+
+
+/*  */
+.container-1{
+    width: 340px;
+    height: 377px;
+    border-radius: 70px;
+    background-color: transparent;
+    box-shadow: 5px 5px 17px rgb(235, 119, 11);
+    /* float: right; */
+    margin-top: 7rem;
+    /* margin-right: 6rem; */
+    margin-left: 30rem;
+    
+}
+.container-1 h1{
+    text-align: center;
+    padding: 10px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+.box{
+    margin-left: 35px;
+   
+}
+.box input{
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-bottom: 1px solid rgb(68, 59, 59);
+    /* padding-left: 40px; */
+    outline: none;
+   
+    background-color: transparent;
+}
+.box input:active
+{
+    outline: none;
+    
+}
+button{
+    padding: 11px;
+    padding-left: 14px 20px;
+    
+    margin-top: 80px;
+    margin-left: 55px;
+    border-radius: 7px;
+    background-color:rgb(244 110 61);
+    cursor: pointer;
+    width: 60%;
+}
+button:hover{
+    /* opacity: 0.8; */
+    background-color: blueviolet;
+    color: black;
+}
+.box-1-img{
+    background-color: black;
+    width: 98%;
+    /* left: 85%; */
+    float: left;
+    height: 200px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+/*footer start*/
+.footer{
+    width: 100%;
+    height: 500px;
+    background: rebeccapurple;
+    background-image:  url("./image/gym_dark_blur.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    
+}
+.about{
+    width: 20%;
+    height: 441px;
+    
+    margin-left: 20px;
+    padding-left: 95px;
+    padding-top: 120px;
+    color: white;
+}
+.about hr{
+    width: 40%;
+    height: 0px;
+    margin-top: 5px;
+    border: 2px solid #ff008f;
+    background: red;
+}
+.about p{
+    font-size: 17px;
+    padding-top: 19px;
+}
+.open{
+    width:20%;
+    height: 441px;
+    
+    margin: auto;
+    margin-top: -383px;
+    margin-left: 538px;
+    /* font-size: 17px; */
+    padding-top: 58px;
+    color: white;
+}
+.open hr{
+    width: 40%;
+    height: 0px;
+    margin-top: 5px;
+    border: 2px solid #ff008f;
+    background: red;
+}
+.open h3{
+    margin-top: 24px;
+    margin-bottom: -34px;
+    font-size: 16px;
+}
+.open p{
+    font-size: 15px;
+    margin-top: -35px;
+    margin-bottom: -23px;
+    padding-left: 9px;
+    text-align: end;
+}
+.open b{
+    margin-top: 16px;
+    margin-bottom: -68px;
+    float: left;
+    margin-left: 206px;
+    font-size: 17px;
+    text-align: end;
+}
+.contact{
+    width: 20%;
+    height: 441px;
+    
+    margin: auto;
+    margin-top: -452px;
+    margin-right: 89px;
+    padding-top: 58px;
+    color: white;
+   
+}
+.contact hr{
+    width: 40%;
+    height: 0px;
+    margin-top: 5px;
+    border: 2px solid #ff008f;
+    background: red;
+}
+.location{
+    width: 100%;
+    height: 50px;
+  
+    margin-top: 31px;
+}
+.icone{
+    width: 12%;
+    height: 50px;
+   
+    margin-top: 31px;
+}
+.icone img{
+    width: 84%;
+    height: 46px;
+}
+.location  b{
+    font-size: 16px;
+    float: left;
+    margin-left: 53px;
+    margin-top: -137px;
+}
+.phone{
+    width: 100%;
+    height: 50px;
+    
+    margin-top: 31px;
+}
+.icone-1{
+    width: 12%;
+    height: 0px;
+   
+    margin-top: 0px;
+}
+.icone-1 img{
+    width: 74%;
+    height: 28px;
+}
+.phone b{
+    font-size: 16px;
+    float: left;
+    margin-left: 53px;
+    margin-top: -77px;
+    margin-bottom: 79px;
+}
+.phone b:hover{
+    color: #000000;
+}
+
+
+
+
+
+
+.start-1{
+    width: 100%;
+    height: 65px;
+    background: #181719;
+  
+}
+.start-1 img{
+    width: 4%;
+    margin-left: 60px;
+    height: 45px;
+    margin-top: 11px;
+}
+.start-1 a{
+    text-decoration: none;
+    color: wheat;
+}
+
+.home-3{
+    width: 50%;
+    float: right;
+    height: 39px;
+    
+    margin-top: 23px;
+}
+.home-4:hover{
+    color: #fdc866;
+}
+
+
+.about-3{
+    padding-left: 36px;
+}
+
+.about-3:hover{
+    color: #fdc866;
+}
+.gallery-3{
+    padding-left: 36px;
+}
+.gallery-3:hover{
+    color: #fdc866;
+}
+
+.contact-3{
+    padding-left: 36px;
+}
+.contact-3:hover{
+    color: #fdc866;
+}
+.login-3{
+    padding-left: 36px;
+}
+.login-3:hover{
+    color: #fdc866;
+}
+.rgis-3{
+    padding-left: 36px;
+}
+.rgis-3:hover{
+    color: #fdc866;
+}
+/*footer end*/
+
+@media (max-widht: 700px){
+   
+        .container{
+            background-image: url("./image/wp2639544-gym-wallpaper-hd.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 770px;
+        }
+    } 
+  

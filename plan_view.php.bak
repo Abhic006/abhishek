@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Record</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="index-2.css">
+</head>
+<body>
+  <div class="nav-2">
+      <img src="image/muscle-fitness-logo-png-transparent.png">
+      <a href="index-2.php">HOME</a>
+      <a href="Plan_view.php">OUR PLANS</a>
+      <a href="">REGISTRATION</a>
+      <a href="equipment_view.php">EQUIPMENT</a>
+      <a href="">LOGOUT</a>
+    </div>
+    <div class="plan">
+	
+                    
+                    <?php
+                    // Include config file
+                    require_once "config.php";
+                    
+                    // Attempt select query execution
+                    $sql = "SELECT * FROM our_plan";
+                    if($result = mysqli_query($link, $sql)){
+                        if(mysqli_num_rows($result) > 0){
+                            echo '<table class="table table-bordered table-striped">';
+                                echo "<thead>";
+                                    echo "<tr>";
+                                     
+                                        echo "<th>plan_name</th>";
+                                        echo "<th>amount</th>";
+                                        echo "<th>duration</th>";
+                                        echo "<th>Edit</th>";
+										echo "<th>Delete</th>";
+                                    echo "</tr>";
+                                echo "</thead>";
+                                echo "<tbody>";
+                                while($row = mysqli_fetch_array($result)){
+                                    echo "<tr>";
+                                       
+                                        echo "<td>" . $row['plan_name'] . "</td>";
+                                        echo "<td>" . $row['amount'] . "</td>";
+                                        echo "<td>" . $row['duration'] . "</td>";
+                                        echo "<td>";
+                                          
+                                            echo '<a href="plan_Edit.php?plan_id='. $row['plan_id'] .'" style="text-decoration:none;"> <div class="edit"> <center><p>Edit</p></center></div></a>';
+                                            echo '<a href="plan_delete.php?plan_id='. $row['plan_id'] .'"> <div class="delete"> <center><p>Delete</p></center></div></a>';  
+                                        
+                                        echo "</td>";
+                                    echo "</tr>";
+									
+                                }
+                                echo "</tbody>";                            
+                            echo "</table>";
+							
+                            // Free result set
+                            mysqli_free_result($result);
+                        } else{
+                            echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                        }
+                    } else{
+                        echo "Oops! Something went wrong. Please try again later.";
+                    }
+ 
+                    // Close connection
+                    mysqli_close($link);
+                    ?>
+					<a href="plan.php" style="text-decoration:none;"> <div class="add-3"><center><p>Add New Plan</p></center></div></a>
+          
+    </div>
+</body>
+</html>
